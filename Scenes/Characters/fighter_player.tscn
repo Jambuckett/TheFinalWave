@@ -1,0 +1,84 @@
+[gd_scene load_steps=9 format=3 uid="uid://blecnxudvqt5d"]
+
+[ext_resource type="Texture2D" uid="uid://b3hv8ow24ovuh" path="res://Art Assets/Characters/Fighters/player_fighter_sprite.png" id="1_mrylc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ad5op"]
+atlas = ExtResource("1_mrylc")
+region = Rect2(120, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gx6jj"]
+atlas = ExtResource("1_mrylc")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6jsbq"]
+atlas = ExtResource("1_mrylc")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i6su6"]
+atlas = ExtResource("1_mrylc")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kn74w"]
+atlas = ExtResource("1_mrylc")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g651v"]
+atlas = ExtResource("1_mrylc")
+region = Rect2(96, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sbi1e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ad5op")
+}],
+"loop": true,
+"name": &"block",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gx6jj")
+}],
+"loop": true,
+"name": &"charge",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6jsbq")
+}],
+"loop": true,
+"name": &"charge_1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i6su6")
+}],
+"loop": true,
+"name": &"charge_2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kn74w")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g651v")
+}],
+"loop": true,
+"name": &"punch",
+"speed": 5.0
+}]
+
+[node name="Fighter_player" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_sbi1e")
+animation = &"idle"

@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=3 uid="uid://c7g1pv5cb10be"]
+
+[ext_resource type="Script" uid="uid://du4a2s63acj06" path="res://Scripts/behind_bars_ending.gd" id="1_gu7cu"]
+[ext_resource type="Texture2D" uid="uid://bjur2w6cwgeug" path="res://Art Assets/Screens/behindbarsending/Behind_bars_ending.png" id="1_kek7i"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gu7cu"]
+font_size = 25
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_k22pr"]
+font_size = 20
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Behind_Bars_ending" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gu7cu")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="background" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_kek7i")
+
+[node name="text" type="Label" parent="CanvasLayer"]
+offset_left = 69.0
+offset_top = 66.0
+offset_right = 772.0
+offset_bottom = 244.0
+text = "Behind Bars, Johnny Ribeye must now face the wave from the confines of the prison...
+
+Was it worth it?"
+label_settings = SubResource("LabelSettings_gu7cu")
+autowrap_mode = 3
+
+[node name="Advancetext" type="Label" parent="CanvasLayer"]
+offset_left = 346.0
+offset_top = 613.0
+offset_right = 1140.0
+offset_bottom = 688.0
+text = "Press Space to Advance"
+label_settings = SubResource("LabelSettings_k22pr")
+horizontal_alignment = 2

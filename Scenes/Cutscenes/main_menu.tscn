@@ -1,0 +1,61 @@
+[gd_scene load_steps=5 format=3 uid="uid://ccorf1a81voy8"]
+
+[ext_resource type="Script" uid="uid://bd5xt1bjdgl23" path="res://Scripts/main_menu.gd" id="1_jnqok"]
+[ext_resource type="Texture2D" uid="uid://3baxk140efqs" path="res://Art Assets/Screens/mainMenu/main_menu_screen.png" id="1_sewo7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jnqok"]
+font_size = 55
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_sewo7"]
+font_size = 20
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jnqok")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="background" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_sewo7")
+
+[node name="Title" type="Label" parent="CanvasLayer"]
+offset_left = 26.0
+offset_top = 183.0
+offset_right = 279.0
+offset_bottom = 232.0
+text = "The Final Wave"
+label_settings = SubResource("LabelSettings_jnqok")
+
+[node name="StartButton" type="Button" parent="CanvasLayer"]
+offset_left = 36.0
+offset_top = 258.0
+offset_right = 157.0
+offset_bottom = 297.0
+text = "Start
+"
+
+[node name="Madeby" type="Label" parent="CanvasLayer"]
+offset_left = 952.0
+offset_top = 563.0
+offset_right = 1131.0
+offset_bottom = 627.0
+text = "Made by 
+JamB Games"
+label_settings = SubResource("LabelSettings_sewo7")
+horizontal_alignment = 2
+
+[connection signal="pressed" from="CanvasLayer/StartButton" to="." method="_on_start_button_pressed"]

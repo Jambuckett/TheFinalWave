@@ -1,0 +1,94 @@
+[gd_scene load_steps=6 format=3 uid="uid://bd7ncc5uaided"]
+
+[ext_resource type="Texture2D" uid="uid://d12k63qw1mqc5" path="res://Art Assets/UI/dialogue_box.png" id="1_0e6jx"]
+[ext_resource type="Script" uid="uid://dlikd87akemvx" path="res://Scenes/SceneManager/dialogue_manager.gd" id="1_rvek1"]
+[ext_resource type="Texture2D" uid="uid://cvr5d7uutd1j" path="res://Art Assets/UI/white_box.png" id="2_rvek1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_i1teu"]
+font_size = 35
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_01oer"]
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+
+[node name="DialogueManager" type="Node2D"]
+script = ExtResource("1_rvek1")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Dialogue_box" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_0e6jx")
+
+[node name="White_box" type="TextureRect" parent="CanvasLayer"]
+offset_left = 73.0
+offset_top = 117.0
+offset_right = 764.0
+offset_bottom = 610.0
+texture = ExtResource("2_rvek1")
+
+[node name="Character_Name" type="Label" parent="CanvasLayer"]
+offset_left = 175.0
+offset_top = 46.0
+offset_right = 451.0
+offset_bottom = 103.0
+text = "Character Name"
+label_settings = SubResource("LabelSettings_i1teu")
+horizontal_alignment = 1
+
+[node name="DialogueOption1" type="Button" parent="CanvasLayer"]
+offset_left = 802.0
+offset_top = 126.0
+offset_right = 1040.0
+offset_bottom = 202.0
+autowrap_mode = 3
+
+[node name="DialogueOption2" type="Button" parent="CanvasLayer"]
+offset_left = 803.0
+offset_top = 217.0
+offset_right = 1041.0
+offset_bottom = 293.0
+autowrap_mode = 3
+
+[node name="DialogueOption3" type="Button" parent="CanvasLayer"]
+offset_left = 803.0
+offset_top = 311.0
+offset_right = 1041.0
+offset_bottom = 387.0
+autowrap_mode = 3
+
+[node name="DialogueOption4" type="Button" parent="CanvasLayer"]
+offset_left = 802.0
+offset_top = 405.0
+offset_right = 1040.0
+offset_bottom = 481.0
+autowrap_mode = 3
+
+[node name="Exit" type="Button" parent="CanvasLayer"]
+offset_left = 802.0
+offset_top = 521.0
+offset_right = 1040.0
+offset_bottom = 597.0
+text = "Exit"
+autowrap_mode = 3
+
+[node name="speech" type="Label" parent="CanvasLayer"]
+offset_left = 89.0
+offset_top = 135.0
+offset_right = 746.0
+offset_bottom = 596.0
+text = "ghgh"
+label_settings = SubResource("LabelSettings_01oer")
+autowrap_mode = 3
+
+[connection signal="pressed" from="CanvasLayer/DialogueOption1" to="." method="_on_dialogue_option_1_pressed"]
+[connection signal="pressed" from="CanvasLayer/DialogueOption2" to="." method="_on_dialogue_option_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/DialogueOption3" to="." method="_on_dialogue_option_3_pressed"]
+[connection signal="pressed" from="CanvasLayer/DialogueOption4" to="." method="_on_dialogue_option_4_pressed"]
+[connection signal="pressed" from="CanvasLayer/Exit" to="." method="_on_exit_pressed"]

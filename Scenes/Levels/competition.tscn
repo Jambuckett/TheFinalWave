@@ -1,0 +1,201 @@
+[gd_scene load_steps=15 format=4 uid="uid://bajuhjeay0oos"]
+
+[ext_resource type="Script" uid="uid://vnarsamdp3wq" path="res://Scripts/competition.gd" id="1_7rq0w"]
+[ext_resource type="Texture2D" uid="uid://b8dprqb5y724i" path="res://Art Assets/Levels/Steakhouse/Steakhouse_floor.png" id="1_dbr2d"]
+[ext_resource type="Texture2D" uid="uid://bmkf4yn2oq05c" path="res://Art Assets/Characters/Competiton/jimtable.png" id="2_7rq0w"]
+[ext_resource type="Texture2D" uid="uid://dl65g4u3amdod" path="res://Art Assets/Characters/Competiton/RalphTable.png" id="3_2lrcj"]
+[ext_resource type="Texture2D" uid="uid://dwsjufbcroj3d" path="res://Art Assets/UI/num_box_under.png" id="5_4id47"]
+[ext_resource type="Texture2D" uid="uid://bxg1jhstxqo5o" path="res://Art Assets/UI/num_box_progress.png" id="6_m0tre"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4id47"]
+texture = ExtResource("1_dbr2d")
+texture_region_size = Vector2i(24, 24)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_m0tre"]
+tile_size = Vector2i(24, 24)
+sources/0 = SubResource("TileSetAtlasSource_4id47")
+
+[sub_resource type="LabelSettings" id="LabelSettings_ojxi4"]
+font_size = 30
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_dbr2d"]
+font_size = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_7rq0w"]
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_2lrcj"]
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_4id47"]
+font_size = 25
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_m0tre"]
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+
+[node name="Competition" type="Node2D"]
+script = ExtResource("1_7rq0w")
+
+[node name="background" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD6//z/AAAAAAAAAAD6//3/AAAAAAAAAAD6//7/AAAAAAAAAAD6////AAAAAAAAAAD6/wAAAAAAAAAAAAD6/wEAAAAAAAAAAAD6/wIAAAAAAAAAAAD7//z/AAAAAAAAAAD7//3/AAAAAAAAAAD7//7/AAAAAAAAAAD7////AAAAAAAAAAD7/wAAAAAAAAAAAAD7/wEAAAAAAAAAAAD7/wIAAAAAAAAAAAD8//z/AAAAAAAAAAD8//3/AAAAAAAAAAD8//7/AAAAAAAAAAD8////AAAAAAAAAAD8/wAAAAAAAAAAAAD8/wEAAAAAAAAAAAD8/wIAAAAAAAAAAAD9//z/AAAAAAAAAAD9//3/AAAAAAAAAAD9//7/AAAAAAAAAAD9////AAAAAAAAAAD9/wAAAAAAAAAAAAD9/wEAAAAAAAAAAAD9/wIAAAAAAAAAAAD+//z/AAAAAAAAAAD+//3/AAAAAAAAAAD+//7/AAAAAAAAAAD+////AAAAAAAAAAD+/wAAAAAAAAAAAAD+/wEAAAAAAAAAAAD+/wIAAAAAAAAAAAD///z/AAAAAAAAAAD///3/AAAAAAAAAAD///7/AAAAAAAAAAD/////AAAAAAAAAAD//wAAAAAAAAAAAAD//wEAAAAAAAAAAAD//wIAAAAAAAAAAAAAAPz/AAAAAAAAAAAAAP3/AAAAAAAAAAAAAP7/AAAAAAAAAAAAAP//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAAAAAABAPz/AAAAAAAAAAABAP3/AAAAAAAAAAABAP7/AAAAAAAAAAABAP//AAAAAAAAAAABAAAAAAAAAAAAAAABAAEAAAAAAAAAAAABAAIAAAAAAAAAAAACAPz/AAAAAAAAAAACAP3/AAAAAAAAAAACAP7/AAAAAAAAAAACAP//AAAAAAAAAAACAAAAAAAAAAAAAAACAAEAAAAAAAAAAAACAAIAAAAAAAAAAAADAPz/AAAAAAAAAAADAP3/AAAAAAAAAAADAP7/AAAAAAAAAAADAP//AAAAAAAAAAADAAAAAAAAAAAAAAADAAEAAAAAAAAAAAADAAIAAAAAAAAAAAAEAPz/AAAAAAAAAAAEAP3/AAAAAAAAAAAEAP7/AAAAAAAAAAAEAP//AAAAAAAAAAAEAAAAAAAAAAAAAAAEAAEAAAAAAAAAAAAEAAIAAAAAAAAAAAAFAPz/AAAAAAAAAAAFAP3/AAAAAAAAAAAFAP7/AAAAAAAAAAAFAP//AAAAAAAAAAAFAAAAAAAAAAAAAAAFAAEAAAAAAAAAAAAFAAIAAAAAAAAAAAD6/wMAAAAAAAAAAAD7/wMAAAAAAAAAAAD8/wMAAAAAAAAAAAD9/wMAAAAAAAAAAAD+/wMAAAAAAAAAAAD//wMAAAAAAAAAAAAAAAMAAAAAAAAAAAABAAMAAAAAAAAAAAACAAMAAAAAAAAAAAADAAMAAAAAAAAAAAAEAAMAAAAAAAAAAAAFAAMAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_m0tre")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
+
+[node name="Jimtable" type="Sprite2D" parent="."]
+position = Vector2(77, 5)
+scale = Vector2(3, 3)
+texture = ExtResource("2_7rq0w")
+
+[node name="RalphTable" type="Sprite2D" parent="."]
+position = Vector2(-81, 5)
+scale = Vector2(3, 3)
+texture = ExtResource("3_2lrcj")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Instructions" type="Label" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -325.0
+offset_top = 35.0
+offset_right = 325.0
+offset_bottom = 77.0
+grow_horizontal = 2
+text = "Chose if the number will be above or below 5
+This is a first to 3"
+label_settings = SubResource("LabelSettings_ojxi4")
+horizontal_alignment = 1
+
+[node name="Below5" type="Button" parent="CanvasLayer"]
+offset_left = 50.0
+offset_top = 551.0
+offset_right = 197.0
+offset_bottom = 619.0
+text = "Below 5"
+
+[node name="Exact" type="Button" parent="CanvasLayer"]
+offset_left = 213.0
+offset_top = 551.0
+offset_right = 360.0
+offset_bottom = 619.0
+text = "5
+"
+
+[node name="Above5" type="Button" parent="CanvasLayer"]
+offset_left = 377.0
+offset_top = 551.0
+offset_right = 524.0
+offset_bottom = 619.0
+text = "Above 5"
+
+[node name="Number" type="Label" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "0"
+label_settings = SubResource("LabelSettings_dbr2d")
+horizontal_alignment = 1
+
+[node name="JimsNum" type="Label" parent="CanvasLayer"]
+visible = false
+offset_left = 799.0
+offset_top = 551.0
+offset_right = 1008.0
+offset_bottom = 579.0
+text = "Jim Sirloins Number..."
+label_settings = SubResource("LabelSettings_7rq0w")
+horizontal_alignment = 1
+
+[node name="PlayerChoice" type="Label" parent="CanvasLayer"]
+visible = false
+offset_left = 192.0
+offset_top = 551.0
+offset_right = 346.0
+offset_bottom = 601.0
+text = "(player choice)"
+label_settings = SubResource("LabelSettings_2lrcj")
+horizontal_alignment = 1
+
+[node name="NumHideBar" type="TextureProgressBar" parent="CanvasLayer"]
+offset_left = 554.0
+offset_top = 303.0
+offset_right = 578.0
+offset_bottom = 328.0
+scale = Vector2(2, 2)
+fill_mode = 2
+texture_under = ExtResource("5_4id47")
+texture_progress = ExtResource("6_m0tre")
+
+[node name="Next_round" type="Button" parent="CanvasLayer"]
+visible = false
+offset_left = 505.0
+offset_top = 457.0
+offset_right = 652.0
+offset_bottom = 525.0
+text = "Next Round
+"
+
+[node name="RoundWinner" type="Label" parent="CanvasLayer"]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -141.5
+offset_top = -32.0
+offset_right = 141.5
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "X had won the round"
+label_settings = SubResource("LabelSettings_4id47")
+horizontal_alignment = 1
+
+[node name="Johnny_points" type="Label" parent="CanvasLayer"]
+offset_left = 229.0
+offset_top = 150.0
+offset_right = 269.0
+offset_bottom = 178.0
+text = "1"
+label_settings = SubResource("LabelSettings_m0tre")
+horizontal_alignment = 1
+
+[node name="Jim_points" type="Label" parent="CanvasLayer"]
+offset_left = 860.0
+offset_top = 150.0
+offset_right = 900.0
+offset_bottom = 178.0
+text = "1"
+label_settings = SubResource("LabelSettings_m0tre")
+horizontal_alignment = 1
+
+[node name="NumRevealTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="pressed" from="CanvasLayer/Below5" to="." method="_on_below_5_pressed"]
+[connection signal="pressed" from="CanvasLayer/Exact" to="." method="_on_exact_pressed"]
+[connection signal="pressed" from="CanvasLayer/Above5" to="." method="_on_above_5_pressed"]
+[connection signal="pressed" from="CanvasLayer/Next_round" to="." method="_on_next_round_pressed"]
+[connection signal="timeout" from="NumRevealTimer" to="." method="_on_num_reveal_timer_timeout"]

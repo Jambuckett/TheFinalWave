@@ -1,0 +1,232 @@
+[gd_scene load_steps=28 format=3 uid="uid://dnfaisyag7mhv"]
+
+[ext_resource type="Script" uid="uid://dx8ru6ak04us5" path="res://Scripts/jim_sirloin.gd" id="1_p5tvb"]
+[ext_resource type="Texture2D" uid="uid://d0cbnvn67ql7f" path="res://Art Assets/Characters/Jim Sirloin/npc1WalkDown.png" id="1_shvew"]
+[ext_resource type="Texture2D" uid="uid://btdtydlkf14m0" path="res://Art Assets/Characters/Jim Sirloin/npc1WalkLeft.png" id="2_52d2o"]
+[ext_resource type="Texture2D" uid="uid://dw5s62n3s3wnl" path="res://Art Assets/Characters/Jim Sirloin/npc1WalkRight.png" id="3_p5tvb"]
+[ext_resource type="Texture2D" uid="uid://bgep1x8j3b7br" path="res://Art Assets/Characters/Jim Sirloin/npc1WalkUp.png" id="4_hl8p3"]
+[ext_resource type="Texture2D" uid="uid://0ap0glrdglxo" path="res://Art Assets/UI/DialogBoxFaceset.png" id="5_52d2o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nr5yx"]
+atlas = ExtResource("1_shvew")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pt8d2"]
+atlas = ExtResource("1_shvew")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o1p6h"]
+atlas = ExtResource("1_shvew")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hiwfl"]
+atlas = ExtResource("1_shvew")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_86ihm"]
+atlas = ExtResource("1_shvew")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hp5ym"]
+atlas = ExtResource("2_52d2o")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3yam6"]
+atlas = ExtResource("2_52d2o")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6w84p"]
+atlas = ExtResource("2_52d2o")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cbu6b"]
+atlas = ExtResource("2_52d2o")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_byo0t"]
+atlas = ExtResource("3_p5tvb")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ji40p"]
+atlas = ExtResource("3_p5tvb")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bjgis"]
+atlas = ExtResource("3_p5tvb")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fpst7"]
+atlas = ExtResource("3_p5tvb")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_65sd1"]
+atlas = ExtResource("4_hl8p3")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aeo5y"]
+atlas = ExtResource("4_hl8p3")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5pj8u"]
+atlas = ExtResource("4_hl8p3")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_choy4"]
+atlas = ExtResource("4_hl8p3")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hli3i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nr5yx")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pt8d2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o1p6h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hiwfl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_86ihm")
+}],
+"loop": true,
+"name": &"walk_down",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hp5ym")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3yam6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6w84p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cbu6b")
+}],
+"loop": true,
+"name": &"walk_left",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_byo0t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ji40p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bjgis")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fpst7")
+}],
+"loop": true,
+"name": &"walk_right",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_65sd1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aeo5y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5pj8u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_choy4")
+}],
+"loop": true,
+"name": &"walk_up",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r5jqs"]
+size = Vector2(14, 21)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_shvew"]
+size = Vector2(58, 29)
+
+[sub_resource type="LabelSettings" id="LabelSettings_p5tvb"]
+font_size = 25
+font_color = Color(0, 0, 0, 1)
+
+[node name="Jim_Sirloin" type="CharacterBody2D"]
+script = ExtResource("1_p5tvb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_hli3i")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_r5jqs")
+
+[node name="PlayerDetectArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetectArea"]
+position = Vector2(0, 24.5)
+shape = SubResource("RectangleShape2D_shvew")
+debug_color = Color(0.968535, 4.81307e-07, 0.467241, 0.42)
+
+[node name="DialogueBox" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="TextureRect" type="TextureRect" parent="DialogueBox"]
+offset_left = 25.0
+offset_top = 475.0
+offset_right = 574.0
+offset_bottom = 554.0
+scale = Vector2(2, 2)
+texture = ExtResource("5_52d2o")
+
+[node name="CharacterName" type="Label" parent="DialogueBox"]
+offset_left = 101.0
+offset_top = 472.0
+offset_right = 224.0
+offset_bottom = 507.0
+text = "Jim Sirloin"
+label_settings = SubResource("LabelSettings_p5tvb")
+
+[node name="Speech" type="Label" parent="DialogueBox"]
+offset_left = 229.0
+offset_top = 518.0
+offset_right = 1087.0
+offset_bottom = 611.0
+text = "Johnny! Are you ready to lose again? I'm here waiting for you!"
+label_settings = SubResource("LabelSettings_p5tvb")
+autowrap_mode = 3
+
+[node name="Option1" type="Button" parent="DialogueBox"]
+visible = false
+offset_left = 213.0
+offset_top = 516.0
+offset_right = 1087.0
+offset_bottom = 566.0
+text = "Let's do it (begin competition)"
+
+[node name="Option2" type="Button" parent="DialogueBox"]
+visible = false
+offset_left = 213.0
+offset_top = 569.0
+offset_right = 1087.0
+offset_bottom = 615.0
+text = "You'll spend the end of your life competing against me? Why??"
+
+[connection signal="body_entered" from="PlayerDetectArea" to="." method="_on_player_detect_area_body_entered"]
+[connection signal="body_exited" from="PlayerDetectArea" to="." method="_on_player_detect_area_body_exited"]
+[connection signal="pressed" from="DialogueBox/Option1" to="." method="_on_option_1_pressed"]
+[connection signal="pressed" from="DialogueBox/Option2" to="." method="_on_option_2_pressed"]

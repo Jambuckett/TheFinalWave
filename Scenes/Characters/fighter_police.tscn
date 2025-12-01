@@ -1,0 +1,84 @@
+[gd_scene load_steps=9 format=3 uid="uid://de8vx4hqpitsa"]
+
+[ext_resource type="Texture2D" uid="uid://fmby373ioywg" path="res://Art Assets/Characters/Fighters/policeman_fighter_sprite.png" id="1_2umfi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ubaux"]
+atlas = ExtResource("1_2umfi")
+region = Rect2(120, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vto5i"]
+atlas = ExtResource("1_2umfi")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u6aiy"]
+atlas = ExtResource("1_2umfi")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hil62"]
+atlas = ExtResource("1_2umfi")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5tvqd"]
+atlas = ExtResource("1_2umfi")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_my5gn"]
+atlas = ExtResource("1_2umfi")
+region = Rect2(96, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m6foj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ubaux")
+}],
+"loop": true,
+"name": &"block",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vto5i")
+}],
+"loop": true,
+"name": &"charge",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u6aiy")
+}],
+"loop": true,
+"name": &"charge_1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hil62")
+}],
+"loop": true,
+"name": &"charge_2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5tvqd")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_my5gn")
+}],
+"loop": true,
+"name": &"punch",
+"speed": 5.0
+}]
+
+[node name="Fighter_police" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_m6foj")
+animation = &"idle"

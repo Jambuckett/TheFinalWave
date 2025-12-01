@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://ct77nip85jqry"]
+
+[ext_resource type="Texture2D" uid="uid://b6bn0pf0chity" path="res://Art Assets/Screens/end/the_end.png" id="1_fow0p"]
+[ext_resource type="Script" uid="uid://c2jbgmu1k7jfr" path="res://Scripts/the_end.gd" id="1_luwih"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_luwih"]
+font_size = 45
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[node name="The_end" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_luwih")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Background" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_fow0p")
+
+[node name="Text" type="Label" parent="CanvasLayer"]
+offset_left = 79.0
+offset_top = 80.0
+offset_right = 252.0
+offset_bottom = 143.0
+text = "The End"
+label_settings = SubResource("LabelSettings_luwih")
+
+[node name="BtMButton" type="Button" parent="CanvasLayer"]
+offset_left = 983.0
+offset_top = 543.0
+offset_right = 1126.0
+offset_bottom = 620.0
+text = "Back to Menu"
+
+[connection signal="pressed" from="CanvasLayer/BtMButton" to="." method="_on_bt_m_button_pressed"]

@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=3 uid="uid://cb1t1fajl3xqj"]
+
+[ext_resource type="Script" uid="uid://crgweyg7o834k" path="res://Scripts/release_prisoner.gd" id="1_owb5b"]
+[ext_resource type="Texture2D" uid="uid://ciniourrrdl3j" path="res://Art Assets/Screens/behindbarsending/released_prisoner.png" id="2_plyuj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_4xye1"]
+font_size = 25
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Release_prisoner" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_owb5b")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="background" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_plyuj")
+
+[node name="Speech" type="Label" parent="CanvasLayer"]
+offset_left = 59.0
+offset_top = 31.0
+offset_right = 1106.0
+offset_bottom = 149.0
+text = "Thanks for releasing me kid, I didn't wanna die in there
+
+What will you do now?"
+label_settings = SubResource("LabelSettings_4xye1")
+
+[node name="Steakhouse" type="Button" parent="CanvasLayer"]
+offset_left = 516.0
+offset_top = 287.0
+offset_right = 681.0
+offset_bottom = 372.0
+text = "Go to Steakhouse"
+
+[node name="Endgame" type="Button" parent="CanvasLayer"]
+offset_left = 516.0
+offset_top = 387.0
+offset_right = 681.0
+offset_bottom = 472.0
+text = "End Game"
+
+[connection signal="pressed" from="CanvasLayer/Steakhouse" to="." method="_on_steakhouse_pressed"]
+[connection signal="pressed" from="CanvasLayer/Endgame" to="." method="_on_endgame_pressed"]

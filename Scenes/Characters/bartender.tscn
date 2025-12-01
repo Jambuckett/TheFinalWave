@@ -1,0 +1,94 @@
+[gd_scene load_steps=9 format=3 uid="uid://budfbhudal835"]
+
+[ext_resource type="Texture2D" uid="uid://cthvcsrod3eq4" path="res://Art Assets/Characters/Bartender/Security_2.png" id="1_54lgs"]
+[ext_resource type="Script" uid="uid://bkjjxfcxco48v" path="res://Scripts/bartender.gd" id="1_phtny"]
+[ext_resource type="Texture2D" uid="uid://0ap0glrdglxo" path="res://Art Assets/UI/DialogBoxFaceset.png" id="3_0w4t7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_phtny"]
+atlas = ExtResource("1_54lgs")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0w4t7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_phtny")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_54lgs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_phtny"]
+size = Vector2(58, 29)
+
+[sub_resource type="LabelSettings" id="LabelSettings_01f8s"]
+font_size = 25
+font_color = Color(0, 0, 0, 1)
+
+[node name="Bartender" type="CharacterBody2D"]
+script = ExtResource("1_phtny")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_0w4t7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_54lgs")
+
+[node name="PlayerDetectArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetectArea"]
+position = Vector2(0, 24.5)
+shape = SubResource("RectangleShape2D_phtny")
+debug_color = Color(0.968535, 4.81307e-07, 0.467241, 0.42)
+
+[node name="DialogueBox" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="TextureRect" type="TextureRect" parent="DialogueBox"]
+offset_left = 25.0
+offset_top = 475.0
+offset_right = 574.0
+offset_bottom = 554.0
+scale = Vector2(2, 2)
+texture = ExtResource("3_0w4t7")
+
+[node name="CharacterName" type="Label" parent="DialogueBox"]
+offset_left = 101.0
+offset_top = 472.0
+offset_right = 224.0
+offset_bottom = 507.0
+text = "Bartender"
+label_settings = SubResource("LabelSettings_01f8s")
+
+[node name="Speech" type="Label" parent="DialogueBox"]
+offset_left = 229.0
+offset_top = 518.0
+offset_right = 1087.0
+offset_bottom = 611.0
+text = "Shame the worlds ending, but the steak eating contest will continue until the end!"
+label_settings = SubResource("LabelSettings_01f8s")
+autowrap_mode = 3
+
+[node name="Option1" type="Button" parent="DialogueBox"]
+visible = false
+offset_left = 213.0
+offset_top = 516.0
+offset_right = 1087.0
+offset_bottom = 566.0
+text = "Are you sad the world's ending?"
+
+[node name="Option2" type="Button" parent="DialogueBox"]
+visible = false
+offset_left = 213.0
+offset_top = 569.0
+offset_right = 1087.0
+offset_bottom = 615.0
+text = "What time is the competition?"
+
+[connection signal="body_entered" from="PlayerDetectArea" to="." method="_on_player_detect_area_body_entered"]
+[connection signal="body_exited" from="PlayerDetectArea" to="." method="_on_player_detect_area_body_exited"]
+[connection signal="pressed" from="DialogueBox/Option1" to="." method="_on_option_1_pressed"]
+[connection signal="pressed" from="DialogueBox/Option2" to="." method="_on_option_2_pressed"]

@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://ci3giu16jgti4"]
+
+[ext_resource type="Texture2D" uid="uid://ypgq13asovcb" path="res://Art Assets/Characters/policeman/policeman_walk_down.png" id="1_1rs0e"]
+[ext_resource type="Script" uid="uid://dwo3lslaioce5" path="res://Scripts/policeman.gd" id="1_dta1r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dta1r"]
+atlas = ExtResource("1_1rs0e")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_74igv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dta1r")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1e8t7"]
+size = Vector2(86, 45)
+
+[node name="Policeman" type="CharacterBody2D"]
+script = ExtResource("1_dta1r")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_74igv")
+
+[node name="PlayerDetectArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetectArea"]
+position = Vector2(0, 28.5)
+shape = SubResource("RectangleShape2D_1e8t7")
+
+[connection signal="body_entered" from="PlayerDetectArea" to="." method="_on_player_detect_area_body_entered"]
+[connection signal="body_exited" from="PlayerDetectArea" to="." method="_on_player_detect_area_body_exited"]
